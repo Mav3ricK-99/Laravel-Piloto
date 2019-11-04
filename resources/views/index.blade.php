@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Inicio</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-    </head>
+@extends('layout')
 
-    <body>
-        <h2>Inicio</h2>
+@section('css_styles')
+        <link rel="stylesheet" type="text/css" href={{asset('/css/producto-box.css')}}>
+    @endsection
+    @section('titulo')
+        <title>Inicio</title>
+    @endsection
+
+    @section('content')
+       
+        <h1>Laravel Piloto</h1>
         <a href='/productos/'>Productos</a>
-    </body>
-</html>
+
+        <p class="lead">
+        blbla
+        </p>
+
+    @endsection

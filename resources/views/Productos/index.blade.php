@@ -1,18 +1,34 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Productos</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-    </head>
+    @extends('layout')
 
-    <body>
-        <h2>Productos</h2>
-        <ul>
+    @section('css_styles')
+        <link rel="stylesheet" type="text/css" href={{asset('/css/producto-box.css')}}>
+    @endsection
+
+    @section('titulo')
+        <title>Productos</title>
+    @endsection
+
+    @section('content')
+       
+        <h2>Catalogo de Productos</h2>
+        
+        <div class='row'>
+        
         @foreach ($productos as $item)
-            <li>{{ $item->nombre_prod }}</li>
+
+        <div class='product--blue'>
+          <div class='product_inner'>
+                
+           <img src='https://www.casadelaudio.com/Image/0/500_500-331-ATM-002_1.png' width='300'>
+           <p style="margin-top:10px">{{ $item->name }}</p>
+           <a id="button-a" href={{ route('product.show', $item->id) }}>
+                <button>Ver Detalles</button>
+           </a>
+          </div>
+        </div>
+        
         @endforeach
-        </ul>
-    </body>
-</html>
+
+    </div>
+       
+    @endsection

@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\products;
-use App\products_type;
+use App\Products;
+use App\Products_type;
 
-//php artisan db:seed (EJECUTA SEEDS)
+//php artisan db:seed
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        products::truncate();
-        $this->call(products_type_seeder::class);
-        $this->call(products_seeder::class);
+        Products::truncate();
+        $this->call(Products_type_seeder::class);
+        $this->call(Products_seeder::class);
         // $this->call(UsersTableSeeder::class);
         //Lo de arriba es el ejemplo para especificar que seed queres que se ejecute. (Con el nombre de la clase del Seed).
         
