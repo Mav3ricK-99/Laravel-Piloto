@@ -24,7 +24,7 @@
             @yield('content')
             
         </div>
-
+        
         <a class="button" href={{url()->previous()}}>
                 <i class="fas fa-chevron-left"></i>
                 <strong>Regresar</strong>
@@ -34,5 +34,28 @@
 
       
       <script src="https://kit.fontawesome.com/d19c2d179b.js" crossorigin="anonymous"></script>
-     </body>
+      
+      <style>
+       #footer{
+           width: 100%;
+           bottom: 0;
+       }
+       body,html{
+         height: 100%;
+         display:flex;
+         flex-direction: column;
+       }
+       main{
+         height: 100%;
+         margin-bottom:5em;
+       }
+      </style>
+       <footer id="footer" class="py-2 bg-dark text-white-50">
+            <div class="container text-center">
+              <small>xDDDDDDDDD</small>
+            </div>
+       </footer>
+    </body>
+
+     
 </html>

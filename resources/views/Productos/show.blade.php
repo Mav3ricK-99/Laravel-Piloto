@@ -9,12 +9,31 @@
     @endsection
 
     @section('content')
-        
-    <h2>Productos</h2>
-        <ul>
-            <li>  {{ $producto->nombre_prod }}  </li>
-            <li>  {{ $producto->descripcion_prod }}  </li>
-            <li>  {{ $producto->precio_prod }}  </li>
+    <section class="product-box">
+    
+        <ul class="product-ul">
+           
+            <div id="col-1">
+            <li> <h3 id="titl_prod">{{$producto->nombre_prod}}</h3> </li>
+            <li>  
+                <img src='https://www.casadelaudio.com/Image/0/500_500-331-ATM-002_1.png' width='300'>  
+            </li>
+            </div>
+            <div id="col-2">
+            <h2> Descripcion </h2>
+            <li id="parag"> <p> {{ $producto->descripcion_prod }} </p> </li>
+            <hr>
+            <h2> Precio </h2>
+            <li> <h4> {{ $producto->precio_prod }} $</h4> </li>
+            <li>
+                    <form action={{route('product.del', $producto)}} method="POST">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }} 
+                            <input class="button" type="submit" value="Eliminar">
+                    </form>
+            </li>
+            </div>
         </ul>
         
+    </section>
     @endsection

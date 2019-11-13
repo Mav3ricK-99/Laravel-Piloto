@@ -1,7 +1,7 @@
     @extends('layout')
 
     @section('css_styles')
-        <link rel="stylesheet" type="text/css" href={{asset('/css/producto-box.css')}}>
+        <link rel="stylesheet" type="text/css" href={{asset('/css/lista-productos.css')}}>
     @endsection
 
     @section('titulo')
