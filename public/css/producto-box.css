@@ -1,24 +1,93 @@
 .product-box
 {
-    padding: 5px;
+    padding: 10px;
     margin:80px 3px 3px 3px;
     display:flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
 }
+.product-box-form-edit
+{
+    width: 38%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+input
+{
+    height: 34px;
+}
+
+.prod-buttons
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-edit input[type="text"], input[type="number"], .form-edit textarea
+{
+    width: 280px;
+    background: rgba(240, 240, 240, .9);
+    border: 1px solid rgba(33, 37, 41, .2);
+    outline-color:#212529;
+}
+
+.form-sub
+{
+    background-color: #212529;
+    border: none; outline: none;
+    font-size: 17px;
+    color: whitesmoke;
+    font-weight: 700;
+    line-height:0px;
+    margin-bottom: 10px;
+    padding: 20px;
+    
+}
+
+#upd-f
+{
+    border-radius:  2px 10px 2px 2px;
+    color:whitesmoke;
+    text-decoration: none;
+}
+
+#del-f
+{
+    border-radius:  2px 2px 2px 10px;    
+}
+
+
+.form-edit textarea
+{
+    width: 350px;
+    height: 130px;
+    max-height: 240px;
+}
+
+.content-edit img{
+    max-width: 320px;
+    max-height: 320px;
+    align-self: center;
+
+}
+
 .product-box hr{
    margin-left:0;
    width:50%;
    height:2px;
 }
+.content-edit
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
 #col-2
 {
-    max-width: 60%;
-    padding-top: 3em;
-}
-.product-box input{
-    margin-left: 55%;
+    width: 80%;
+    align-self: center;
 }
 
 .product-box form{
@@ -27,13 +96,15 @@
 
 #titl_prod
 {
-    padding-bottom: 1em;
+    text-align:center;
+    padding-bottom: .5em;
 }
 .product-ul
 {
     display:flex;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 50%;
     flex-direction: row;
 }
 

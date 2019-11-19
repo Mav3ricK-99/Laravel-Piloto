@@ -18,11 +18,13 @@
 
         <div class='product--blue'>
           <div class='product_inner'>
-                
-           <img src='https://www.casadelaudio.com/Image/0/500_500-331-ATM-002_1.png' width='300'>
-           <p style="margin-top:10px">{{ $item->name }}</p>
+            <h4>{{ $item->nombre_prod }}</h4>
+            <img src='https://www.casadelaudio.com/Image/0/500_500-331-ATM-002_1.png' width='300'>
            <a id="button-a" href={{ route('product.show', $item->id) }}>
                 <button>Ver Detalles</button>
+           </a>
+           <a id="button-a" href={{ route('product.showedit', $item->id) }}>
+            <button>Editar Producto</button>
            </a>
           </div>
         </div>

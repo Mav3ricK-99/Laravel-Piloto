@@ -7,10 +7,10 @@
 }
  .product, .product--blue, .product--orange, .product--red, .product--green, .product--yellow, .product--pink {
 	 box-shadow: 1px 5px 15px #ccc;
-	 width: 15em;
+	 width: 10em;
 	 height: auto;
 	 border-radius: 3px;
-	 padding: 2em;
+	 padding: 1.5em;
 	 margin: 1em;
 	 overflow: hidden;
 	 position: relative;
@@ -62,9 +62,10 @@
 	 border: 1px solid rgba(255, 255, 255, 0.5);
 	 color: #fff;
 	 border-radius: 3px;
-	 padding: 1em 3em;
+	 padding: 1em 2.75em;
 	 margin: 1em 0 0 0;
 	 background: transparent;
+	 outline:none;
 	 cursor: pointer;
 	 transition: background ease-in 0.25s;
 }

@@ -25,13 +25,17 @@
             <hr>
             <h2> Precio </h2>
             <li> <h4> {{ $producto->precio_prod }} $</h4> </li>
-            <li>
+            <hr>
+            <article class="prod-buttons">
+            
                     <form action={{route('product.del', $producto)}} method="POST">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }} 
-                            <input class="button" type="submit" value="Eliminar">
+                            <input class="form-sub" id="del-f" type="submit" value="Eliminar">
                     </form>
-            </li>
+           
+                    <a class="form-sub" id="upd-f" href={{route('product.showedit', $producto)}}>Editar</a>
+            </article>
             </div>
         </ul>
         

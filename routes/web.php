@@ -19,6 +19,12 @@ Route::get('/productos/{producto}', 'ProductosController@show')
     ->name('product.show');
 
 Route::delete('/productos/{producto}', 'ProductosController@delprod')
+    ->where('producto', '[0-9]+')
     ->name('product.del');
 
+Route::get('/productos/{producto}/editar', 'ProductosController@showedit')
+    ->name('product.showedit');
+
+Route::put('/productos/{producto}/editar', 'ProductosController@edit')
+    ->name('product.edit');
 
