@@ -4,7 +4,7 @@
     margin:80px 3px 3px 3px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
 }
 .product-box-form-edit
@@ -21,6 +21,7 @@ input
 
 .prod-buttons
 {
+    max-width: 30%;
     display: flex;
     justify-content: space-between;
 }
@@ -86,8 +87,8 @@ input
 
 #col-2
 {
-    width: 80%;
-    align-self: center;
+   width: 720px;
+   align-self: flex-start;
 }
 
 .product-box form{
@@ -97,22 +98,26 @@ input
 #titl_prod
 {
     text-align:center;
-    padding-bottom: .5em;
+    padding-bottom: 1em;
+    display: flex;
+}
+
+#type_prod
+{
+    font-size:18px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 .product-ul
 {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
     flex-direction: row;
+    
 }
 
 .product-box ul li{
     list-style: none;
 }
 
-.product-box #parag
-{
-   max-width: 70%;
-}

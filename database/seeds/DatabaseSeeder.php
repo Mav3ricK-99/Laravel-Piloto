@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Products;
-use App\Products_type;
+use Illuminate\Support\Facades\DB;
+use App\Product;
+use App\Product_type;
 
 //php artisan db:seed
 
@@ -10,7 +11,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        Products::truncate();
+        Product::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Product_type::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         $this->call(Products_type_seeder::class);
         $this->call(Products_seeder::class);
         // $this->call(UsersTableSeeder::class);

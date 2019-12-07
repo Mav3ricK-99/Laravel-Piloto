@@ -14,8 +14,8 @@ class CreateProductsTable extends Migration
             $table->string("nombre_prod",64);
             $table->string("descripcion_prod", 255);
             $table->integer('precio_prod');
-            $table->bigInteger('type_id')->unsigned();            
-            $table->foreign('type_id')->references('id_prod')->on('products_type');
+            $table->bigInteger('type')->unsigned();            
+            $table->foreign('type')->references('id')->on('products_type');
             $table->timestamps();
         });
     }
@@ -23,5 +23,7 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('products');
+            $table->dropForeign(['type']);
+            $table->dropColumn('type');
     }
 }

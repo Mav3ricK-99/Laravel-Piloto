@@ -17,6 +17,14 @@
        {{ csrf_field() }}
        <input type="text" name="nombre" placeholder="Nombre Articulo" value={{ old('nombre') }}>
        <input type="number" name="precio" placeholder="Precio Articulo" value={{ old('precio') }}>
+       <select name="tipo">
+           <option value="0">Categoria</option>
+
+          @foreach ($tipos as $tipo)
+                <option value={{$tipo->id_prod}}>{{$tipo->nombre_tipo}}</option>
+          @endforeach
+
+       </select>
        <textarea name="desc" placeholder="Descripcion Articulo" value={{ old('desc') }}></textarea>
        <input type="submit" value="Enviar">
     </form>

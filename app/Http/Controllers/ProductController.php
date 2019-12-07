@@ -3,25 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Products;
+use App\Product;
+use App\Product_type;
 use Illuminate\Validation\Rule;
 
-class ProductosController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
-        $productos = Products::all();
+        $productos = Product::all();
         return view('productos.index', compact('productos'));
     }
 
-    public function show(Products $producto)
+    public function show(Product $producto)
     {
         return view('productos.show', compact('producto'));
     }
 
     public function add()
     {
-        return view('productos.add');
+        $tipos = Products_type::all();
+        return view('productos.add', compact('tipos'));
     }
 
     public function addprod()
@@ -31,19 +33,23 @@ class ProductosController extends Controller
         $data = request()->validate([
             'nombre' => 'required', 
             'precio' => 'required',
-            'desc' => 'required|max:255'
+            'desc' => 'required|max:255',
+            'tipo' => 'required|min:1'
+
         ],[
-            'nombre.required' => 'El campo nombre es obligatorio',
-            'precio.required' => 'El precio debe ser especificado',
-            'desc.required' => 'El articulo tiene que tener una descripcion',
-            'desc.max' => 'La descripcion del articulo tiene menos de 256 caracteres'
+            'nombre.required' => 'El campo nombre es obligatorio.',
+            'precio.required' => 'El precio debe ser especificado.',
+            'desc.required' => 'El articulo tiene que tener una descripcion.',
+            'tipo.required' => 'El producto debe tener una categoria.',
+            'desc.max' => 'La descripcion del articulo tiene menos de 256 caracteres.',
+            'tipo.min' => 'Se debe elegir la categoria del producto.'
         ]);
 
-        Products::create([
+        Product::create([
             'nombre_prod' => $data['nombre'],
             'descripcion_prod' => $data['desc'],
             'precio_prod' => $data['precio'],
-            'type_id' => 3
+            'type' => $data['tipo']
            
         ]);
         return redirect()->route('product.add');
@@ -51,16 +57,16 @@ class ProductosController extends Controller
 
     public function delprod($producto)
     {
-          Products::where('id', $producto)->first()->delete() ?? abort(404);
+          Product::where('id', $producto)->first()->delete() ?? abort(404);
           return redirect(route('product.index'));
     }
 
-    public function showedit(Products $producto)
+    public function showedit(Product $producto)
     {
         return view('productos.showedit', compact('producto'));
     }
 
-    public function edit(Products $producto)
+    public function edit(Product $producto)
     {
         $data = request()->all();
         $data = request()->validate([
